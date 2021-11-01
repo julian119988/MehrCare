@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar/Navbar";
+import Hero from "./components/Hero/Hero";
+import { createGlobalStyle } from "styled-components";
 
+const Global = createGlobalStyle`
+    *{
+        font-family: 'Lexend Deca', sans-serif;
+        box-sizing: border-box;
+    }
+    html,body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        min-width: 100vw;
+    }
+`;
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            <Global />
+            <Navbar></Navbar>
+            <Hero />
+        </>
+    );
 }
 
 export default App;
