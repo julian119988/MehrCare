@@ -24,11 +24,15 @@ const Title = styled.h3`
     margin: 0;
     padding: 0;
     font-weight: 500;
+    font-size: 26px;
+    line-height: 32px;
 `;
 const BoldTitle = styled.h3`
     margin: 0;
     padding: 0;
     font-weight: 600;
+    font-size: 26px;
+    line-height: 32px;
 `;
 const Logo = styled.img`
     width: 64px;
@@ -51,5 +55,13 @@ const HamburgerMenu = styled.img`
     height: 29px;
     width: 55px;
     margin-left: auto;
+    cursor: pointer;
+    transition: 50ms ease-in-out all;
+    &:active {
+        transform: scale(0.9);
+    }
+    &:hover {
+        opacity: 0.3;
+    }
 `;
 export default Navbar;
