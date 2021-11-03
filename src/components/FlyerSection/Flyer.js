@@ -42,7 +42,6 @@ export default function Flyer() {
                 </Container>
             </Background2>
             <Background3></Background3>
-            {/*
             <Carousel1
                 images={images}
                 style={{ height: "auto", width: "100%" }}
@@ -52,7 +51,7 @@ export default function Flyer() {
                 isLoop
                 hasIndexBoard={false}
                 objectFit
-            />*/}
+            />
         </Container>
     );
 }
