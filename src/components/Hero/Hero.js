@@ -31,7 +31,7 @@ const HeroTitle = styled.div`
     height: 147px;
     background: #c4c4c4;
     mix-blend-mode: luminosity;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     text-align: center;
     display: flex;
     justify-content: center;
@@ -39,6 +39,7 @@ const HeroTitle = styled.div`
     z-index: 0;
     position: absolute;
     top: 20%;
+    outline: none;
 `;
 
 const Text = styled.p`
