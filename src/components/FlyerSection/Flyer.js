@@ -100,7 +100,6 @@ export default function Flyer() {
                         isAutoPlaying
                         isLoop
                         hasIndexBoard={false}
-                        objectFit
                     />
                 </Container>
             </Background3>

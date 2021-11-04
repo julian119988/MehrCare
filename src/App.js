@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Flyer from "./components/FlyerSection/Flyer";
+import Section2 from "./components/Section2/Section2";
 import { createGlobalStyle } from "styled-components";
 
 const Global = createGlobalStyle`
@@ -22,6 +23,7 @@ function App() {
             <Navbar></Navbar>
             <Hero />
             <Flyer />
+            <Section2 />
         </>
     );
 }
