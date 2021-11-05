@@ -30,7 +30,6 @@ const HeroTitle = styled.div`
     width: 245px;
     height: 147px;
     background: #c4c4c4;
-    mix-blend-mode: luminosity;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     text-align: center;
     display: flex;

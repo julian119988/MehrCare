@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Flyer from "./components/FlyerSection/Flyer";
 import Section2 from "./components/Section2/Section2";
+import Footer from "./components/Footer/Footer";
 import { createGlobalStyle } from "styled-components";
 
 const Global = createGlobalStyle`
@@ -24,6 +25,7 @@ function App() {
             <Hero />
             <Flyer />
             <Section2 />
+            <Footer />
         </>
     );
 }

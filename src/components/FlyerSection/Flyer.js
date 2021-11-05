@@ -160,7 +160,7 @@ const Text = styled.h2`
 const Background1 = styled.div`
     width: 100%;
     background-image: url(${background1});
-    aspect-ratio: 4.0760869565217391304347826086957;
+    aspect-ratio: 4.1;
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
