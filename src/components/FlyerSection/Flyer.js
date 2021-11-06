@@ -12,16 +12,17 @@ import tramite from "../../images/tramiteVisado.png";
 import contrato from "../../images/contratoLaboral.png";
 import certificado from "../../images/certificadoB2.png";
 
-export default function Flyer() {
+export default function Flyer(props) {
     const images = [clinica1, clinica2, clinica3].map((clinica) => ({
         src: clinica,
     }));
     return (
-        <Container style={{ marginTop: "20px" }}>
+        <Container style={{ marginTop: "20px" }} ref={props.bg1Ref}>
             <Banner src={bannersrc} alt="MehrCare banner" />
             <Flyer2 src={flyer2} alt="MehrCare flyer" />
             <Background1>
                 <Text
+                    ref={props.requisitosRef}
                     style={{ position: "absolute", bottom: "10%", left: "5%" }}
                 >
                     ¿Cuáles son los requisitos?
@@ -106,6 +107,7 @@ export default function Flyer() {
         </Container>
     );
 }
+
 const List = styled.ul`
     color: white;
     padding-left: 7%;

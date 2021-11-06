@@ -2,13 +2,25 @@ import styled from "styled-components";
 import heroImg from "../../images/heroImg.png";
 import arrowsrc from "../../images/arrow.png";
 
-export default function Hero() {
+export default function Hero(props) {
     return (
         <Container>
             <HeroTitle>
                 <Text>¿Te gustaria trabajar como enfermero en Alemania?</Text>
             </HeroTitle>
-            <ArrowDiv>
+            <ArrowDiv
+                onClick={() => {
+                    const offset = 0;
+                    const bodyRect = document.body.getBoundingClientRect().top;
+                    const elementRect =
+                        props.bg1Ref.current.getBoundingClientRect().top;
+                    const elementPosition = elementRect - bodyRect;
+                    const offsetPosition = elementPosition - offset;
+                    window.scrollTo({
+                        top: offsetPosition,
+                    });
+                }}
+            >
                 <ArrowImg src={arrowsrc} alt="Arrow to go down the page" />
             </ArrowDiv>
         </Container>

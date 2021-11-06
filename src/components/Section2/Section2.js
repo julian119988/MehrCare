@@ -8,7 +8,7 @@ import foto3 from "../../images/personal/foto3.jpg";
 import CarouselPersonal from "react-gallery-carousel";
 import "react-gallery-carousel/dist/index.css";
 
-export default function Section2() {
+export default function Section2(props) {
     const clinics = [clinica1, clinica2, clinica3];
     const personal = [foto2, foto1, foto3].map((foto) => ({
         src: foto,
@@ -52,7 +52,7 @@ export default function Section2() {
                     Para mas información rellena este formulario y nos pondremos
                     en contacto contigo
                 </P>
-                <FormDeContacto>
+                <FormDeContacto ref={props.contactRef}>
                     <ContactMeTitle>Contactános</ContactMeTitle>
                     <Input type="text" placeholder="Nombre" required />
                     <Input type="text" placeholder="Apellido" required />

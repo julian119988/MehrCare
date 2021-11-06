@@ -1,7 +1,34 @@
 import mehrCareLogo from "../../images/mehrCareLogo.jpg";
 import hamburgerMenu from "../../images/hamburgerMenu.jpg";
 import styled from "styled-components";
-function Navbar() {
+import { motion } from "framer-motion";
+import { useState } from "react";
+import cross from "../../images/cross.png";
+
+function Navbar(props) {
+    const [isOpen, setIsOpen] = useState(false);
+    const menuVariants = {
+        opened: {
+            top: 0,
+            transition: {
+                when: "beforeChildren",
+                staggerChildren: 0.2,
+            },
+        },
+        closed: {
+            top: "-90vh",
+        },
+    };
+    const linkVariants = {
+        opened: {
+            opacity: 1,
+            y: 50,
+        },
+        closed: {
+            opacity: 0,
+            y: 0,
+        },
+    };
     return (
         <Container>
             <Logo src={mehrCareLogo} alt="MehrCare logo" />
@@ -9,10 +36,103 @@ function Navbar() {
                 <Title>Mehr</Title>
                 <BoldTitle>Care</BoldTitle>
             </TitleDiv>
-            <HamburgerMenu src={hamburgerMenu} alt="hambuger menu icon" />
+            <HamburgerMenu
+                src={hamburgerMenu}
+                alt="hambuger menu icon"
+                onClick={() => setIsOpen(!isOpen)}
+            />
+            <Nav
+                initial={false}
+                variants={menuVariants}
+                animate={isOpen ? "opened" : "closed"}
+            >
+                <Link
+                    variants={linkVariants}
+                    onClick={() => {
+                        window.scrollTo(0, 0);
+                        setIsOpen(!isOpen);
+                    }}
+                >
+                    Home
+                </Link>
+                <Link
+                    variants={linkVariants}
+                    onClick={() => {
+                        const offset = 30;
+                        const bodyRect =
+                            document.body.getBoundingClientRect().top;
+                        const elementRect =
+                            props.requisitosRef.current.getBoundingClientRect()
+                                .top;
+                        const elementPosition = elementRect - bodyRect;
+                        const offsetPosition = elementPosition - offset;
+                        window.scrollTo({
+                            top: offsetPosition,
+                        });
+                        setIsOpen(!isOpen);
+                    }}
+                >
+                    Requisitos
+                </Link>
+                <Link
+                    variants={linkVariants}
+                    onClick={() => {
+                        const offset = 30;
+                        const bodyRect =
+                            document.body.getBoundingClientRect().top;
+                        const elementRect =
+                            props.contactRef.current.getBoundingClientRect()
+                                .top;
+                        const elementPosition = elementRect - bodyRect;
+                        const offsetPosition = elementPosition - offset;
+                        window.scrollTo({
+                            top: offsetPosition,
+                        });
+                        setIsOpen(!isOpen);
+                    }}
+                >
+                    Contacto
+                </Link>
+                <CloseNav
+                    variants={linkVariants}
+                    onClick={() => setIsOpen(!isOpen)}
+                ></CloseNav>
+            </Nav>
         </Container>
     );
 }
+
+const Link = styled(motion.li)`
+    color: white;
+    margin-bottom: 1.6rem;
+    font-size: 1.4rem;
+    list-style: none;
+    cursor: pointer;
+`;
+
+const CloseNav = styled(motion.div)`
+    position: absolute;
+    top: 8vh;
+    right: 20vw;
+    background-image: url(${cross});
+    width: 30px;
+    aspect-ratio: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+`;
+const Nav = styled(motion.nav)`
+    background-color: #0e9382;
+    height: 90vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;
 
 const TitleDiv = styled.div`
     display: flex;
