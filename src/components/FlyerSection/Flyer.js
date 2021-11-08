@@ -77,8 +77,12 @@ export default function Flyer(props) {
                 </List>
             </Background2>
             <Background3>
-                <Container>
-                    <Text>¿En que te ayuda MehrCare?</Text>
+                <Container
+                    style={{ alignItems: "flex-start", marginTop: "5%" }}
+                >
+                    <Text style={{ marginLeft: "5%" }}>
+                        ¿En que te ayuda MehrCare?
+                    </Text>
                     <P>
                         Nosotros financiamos todo el proyecto! Te brindamos los
                         cursos de aleman totalmente gratis y te ayudamos a
@@ -182,7 +186,6 @@ const Container = styled.div`
 const Background2 = styled.div`
     width: 100%;
     background-image: url(${background2});
-    height: auto;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;

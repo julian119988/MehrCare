@@ -12,11 +12,11 @@ function Navbar(props) {
             top: 0,
             transition: {
                 when: "beforeChildren",
-                staggerChildren: 0.2,
+                staggerChildren: 0.05,
             },
         },
         closed: {
-            top: "-90vh",
+            top: "-100vh",
         },
     };
     const linkVariants = {
@@ -123,7 +123,7 @@ const CloseNav = styled(motion.div)`
 `;
 const Nav = styled(motion.nav)`
     background-color: #0e9382;
-    height: 90vh;
+    height: 100vh;
     width: 100vw;
     position: fixed;
     top: 0;

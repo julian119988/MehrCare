@@ -11,13 +11,37 @@ export default function Footer() {
             <HrLindo></HrLindo>
             <P style={{ margin: "5px 0 10px 0" }}>¡Seguinos!</P>
             <SocialMediaIconsDiv>
-                <Icons src={instagramIcon} alt="Instagram icon" />
-                <Icons src={facebookIcon} alt="Facebook icon" />
-                <Icons src={wppIcon} alt="Whatsapp icon" />
+                <Icons
+                    src={instagramIcon}
+                    alt="Instagram icon"
+                    onClick={() =>
+                        (window.location.href =
+                            "https://www.instagram.com/mehrcare_tenerife/?hl=es-la")
+                    }
+                />
+                <Icons
+                    src={facebookIcon}
+                    alt="Facebook icon"
+                    onClick={() =>
+                        (window.location.href =
+                            "https://www.facebook.com/Mehrcare-Enfermeros-en-Alemania-109384110918604/")
+                    }
+                />
+                <Icons
+                    src={wppIcon}
+                    alt="Whatsapp icon"
+                    onClick={() =>
+                        (window.location.href =
+                            "https://api.whatsapp.com/send?phone=5492646241441")
+                    }
+                />
                 <Icons
                     src={emailIcon}
                     style={{ width: "20px", height: "20px" }}
                     alt="Icon of an email"
+                    onClick={() =>
+                        (window.location.href = "mailto:mail@domain.tld")
+                    }
                 />
             </SocialMediaIconsDiv>
             <CopyDiv>
@@ -65,6 +89,7 @@ const SocialMediaIconsDiv = styled.div`
 const Icons = styled.img`
     aspect-ratio: 1;
     width: 24px;
+    cursor: pointer;
 `;
 
 const CopyDiv = styled.div`
