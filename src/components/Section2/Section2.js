@@ -95,6 +95,9 @@ export default function Section2(props) {
 const Container = styled.div`
     display: flex;
     flex-direction: column;
+    @media (min-width: 600px) {
+        max-width: 50%;
+    }
 `;
 const ContactMeTitle = styled.h3`
     font-weight: 500;

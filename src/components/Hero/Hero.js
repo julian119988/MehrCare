@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import heroImg from "../../images/heroImg.png";
+import heroImg from "../../images/heroImg.webp";
 import arrowsrc from "../../images/arrow.png";
-import hero2Img from "../../images/hero2Img.jpg";
-
+import heroImgLandscape from "../../images/hero2Img.webp";
 export default function Hero(props) {
     return (
         <Container>
@@ -31,15 +30,14 @@ export default function Hero(props) {
 const Container = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
     background-image: url(${heroImg});
     background-repeat: no-repeat;
     background-size: cover;
     height: 80vh;
-    margin-top: 120px;
+    margin-top: 90px;
     position: relative;
     @media (orientation: landscape) {
-        background-image: url(${hero2Img});
+        background-image: url(${heroImgLandscape});
     }
 `;
 const HeroTitle = styled.div`
@@ -55,6 +53,12 @@ const HeroTitle = styled.div`
     position: absolute;
     top: 20%;
     outline: none;
+    align-self: center;
+    @media (min-width: 600px) {
+        width: 25vw;
+        height: 12vw;
+        left: 18%;
+    }
 `;
 
 const Text = styled.p`
@@ -65,8 +69,11 @@ const Text = styled.p`
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
-    line-height: 25px;
     z-index: 1;
+    @media (min-width: 600px) {
+        max-width: 20ch;
+        font-size: 1.7vw;
+    }
 `;
 
 const ArrowDiv = styled.div`
@@ -84,6 +91,7 @@ const ArrowDiv = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    align-self: center;
     &:active {
         transform: scale(0.9);
     }

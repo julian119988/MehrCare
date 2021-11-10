@@ -165,6 +165,7 @@ const NavBarListItem = styled.li`
         display: flex;
         margin-left: 2vw;
         margin-right: 2vw;
+        font-size: 1.6vw;
         cursor: pointer;
         &:hover {
             opacity: 0.5;
@@ -231,7 +232,7 @@ const Logo = styled.img`
 const Container = styled.div`
     display: flex;
     flex-direction: row;
-    height: 120px;
+    height: 99px;
     align-items: center;
     padding: 0 20px 0 20px;
     position: fixed;
