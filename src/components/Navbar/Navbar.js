@@ -68,7 +68,7 @@ function Navbar(props) {
                 </NavBarListItem>
                 <NavBarListItem
                     onClick={() => {
-                        const offset = 130;
+                        const offset = 180;
                         const bodyRect =
                             document.body.getBoundingClientRect().top;
                         const elementRect =

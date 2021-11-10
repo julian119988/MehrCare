@@ -5,9 +5,9 @@ import bannersrc from "../../images/MehrCareBanner.jpg";
 import flyer2 from "../../images/MehrCareFlyer2.jpg";
 import background1 from "../../images/background1.jpg";
 import background2 from "../../images/bg2.png";
-import clinica1 from "../../images/clinica1.jpg";
-import clinica2 from "../../images/clinica2.jpg";
-import clinica3 from "../../images/clinica3.jpg";
+import clinica1 from "../../images/clinicas/clinica1.webp";
+import clinica2 from "../../images/clinicas/clinica2.webp";
+import clinica3 from "../../images/clinicas/clinica3.webp";
 import tramite from "../../images/tramiteVisado.png";
 import contrato from "../../images/contratoLaboral.png";
 import certificado from "../../images/certificadoB2.png";
@@ -52,10 +52,9 @@ export default function Flyer(props) {
                         <div>
                             <h2>Certificado nivel B2</h2>
                             <p>
-                                No es necesario saber alemán con
-                                anterioridad.Cuando inicies la beca te
-                                brindaremos un curso para que aprendas alemán y
-                                puedas viajar.
+                                No es necesario saber alemán con anterioridad.
+                                Cuando inicies la beca te brindaremos un curso
+                                para que aprendas alemán y puedas viajar.
                             </p>
                         </div>
                         <img src={certificado} alt="B2 aleman exam" />
@@ -79,8 +78,8 @@ export default function Flyer(props) {
                         <div>
                             <h2>Trámites de Visado</h2>
                             <p>
-                                Tendrás que obtener una visa para trabajar allá
-                                .Nosotros te ayudaremos con los papeles y la
+                                Tendrás que obtener una visa para trabajar allá.
+                                Nosotros te ayudaremos con los papeles y la
                                 inserción laboral, así podrás obtener la visa
                                 facilmente.
                             </p>
@@ -120,26 +119,25 @@ export default function Flyer(props) {
                     <Item>
                         Certificado nivel B2
                         <CertificadoDiv>
-                            No es necesario saber alemán con anterioridad.Cuando
-                            inicies la beca te brindaremos un cursopara que
-                            aprendas alemán y puedas viajar.
+                            No es necesario saber alemán con anterioridad.
+                            Cuando inicies la beca te brindaremos un curso para
+                            que aprendas alemán y puedas viajar.
                         </CertificadoDiv>
                     </Item>
                     <Item>
                         Contrato laboral
                         <ContratoDiv>
-                            Necesitas un contrato laboral antes que
-                            puedasviajar, la duracion mínima es de 2 años.
-                            Tendrás entrevistas directamente con
-                            clínicasalemanas.
+                            Necesitas un contrato laboral antes que puedas
+                            viajar, la duracion mínima es de 2 años. Tendrás
+                            entrevistas directamente con clínicas alemanas.
                         </ContratoDiv>
                     </Item>
                     <Item>
                         Trámites de visado
                         <TramitesDiv>
-                            Tendrás que obtener una visa para trabajar
-                            allá.Nosotros te ayudaremos con los papeles yla
-                            inserción laboral, así podrásobtener la visa
+                            Tendrás que obtener una visa para trabajar allá.
+                            Nosotros te ayudaremos con los papeles y la
+                            inserción laboral, así podrás obtener la visa
                             facilmente.
                         </TramitesDiv>
                     </Item>
@@ -165,9 +163,10 @@ export default function Flyer(props) {
                     <Carousel1
                         images={images}
                         style={{
-                            height: "auto",
+                            aspectRatio: "1.5",
                             width: "70%",
                             margin: "5% auto 5% auto",
+                            maxWidth: "800px",
                         }}
                         zIndexAtMax={999}
                         shouldLazyLoad
@@ -305,6 +304,11 @@ const P = styled.p`
     margin: 10px 10% 10px 10%;
     padding: 0;
     color: white;
+    @media (min-width: 600px) {
+        font-size: 1.7vw;
+        max-width: 65ch;
+        margin-top: 3vw;
+    }
 `;
 const CertificadoDiv = styled.div`
     width: 100%;
@@ -339,11 +343,14 @@ const Text = styled.h2`
     padding: 0;
     color: white;
     font-weight: normal;
+    @media (min-width: 600px) {
+        font-size: 3vw;
+    }
 `;
 const Background1 = styled.div`
     width: 100%;
     background-image: url(${background1});
-    aspect-ratio: 4.07;
+    aspect-ratio: 4.1;
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;

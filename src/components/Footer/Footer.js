@@ -9,7 +9,7 @@ export default function Footer() {
         <Main>
             <MehrCareLogo src={mehrCareLogo} alt="MehrCare logo and name" />
             <HrLindo></HrLindo>
-            <P style={{ margin: "5px 0 10px 0" }}>¡Seguinos!</P>
+            <P id="followUs">¡Seguinos!</P>
             <SocialMediaIconsDiv>
                 <Icons
                     src={instagramIcon}
@@ -37,8 +37,8 @@ export default function Footer() {
                 />
                 <Icons
                     src={emailIcon}
-                    style={{ width: "20px", height: "20px" }}
                     alt="Icon of an email"
+                    id="bigger"
                     onClick={() =>
                         (window.location.href = "mailto:mail@domain.tld")
                     }
@@ -60,9 +60,19 @@ const Main = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 2vw;
+    #followUs {
+        margin: 5px 0 10px 0;
+        @media (min-width: 600px) {
+            margin: 1vw 0 1vw 0;
+        }
+    }
 `;
 const MehrCareLogo = styled.img`
     max-width: 45%;
+    @media (min-width: 600px) {
+        max-width: 300px;
+    }
 `;
 
 const HrLindo = styled.div`
@@ -70,6 +80,9 @@ const HrLindo = styled.div`
     height: 1px;
     background-color: #5ac3b5;
     margin: 10px 0 10px 0;
+    @media (min-width: 600px) {
+        height: 2px;
+    }
 `;
 
 const P = styled.p`
@@ -78,6 +91,10 @@ const P = styled.p`
     line-height: 12px;
     color: #000000;
     margin: 0 3px 0 3px;
+    @media (min-width: 600px) {
+        font-size: 1.3vw;
+        margin: 0 1vw 0 1vw;
+    }
 `;
 const SocialMediaIconsDiv = styled.div`
     display: flex;
@@ -85,11 +102,19 @@ const SocialMediaIconsDiv = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 35%;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    #bigger {
+        width: 20%;
+        aspect-ratio: 1;
+        max-width: 45px;
+    }
 `;
 const Icons = styled.img`
     aspect-ratio: 1;
-    width: 24px;
+    width: 20%;
     cursor: pointer;
+    max-width: 50px;
 `;
 
 const CopyDiv = styled.div`
