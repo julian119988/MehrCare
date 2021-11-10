@@ -120,7 +120,7 @@ function Navbar(props) {
                 <Link
                     variants={linkVariants}
                     onClick={() => {
-                        const offset = 30;
+                        const offset = 130;
                         const bodyRect =
                             document.body.getBoundingClientRect().top;
                         const elementRect =
