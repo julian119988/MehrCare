@@ -11,6 +11,9 @@ import clinica3 from "../../images/clinica3.jpg";
 import tramite from "../../images/tramiteVisado.png";
 import contrato from "../../images/contratoLaboral.png";
 import certificado from "../../images/certificadoB2.png";
+import mehrCareLogo from "../../images/MehrCareLogoYNombre.jpg";
+import bg1 from "../../images/bgWide/bg1.png";
+import bg2 from "../../images/bgWide/bg2.png";
 
 export default function Flyer(props) {
     const images = [clinica1, clinica2, clinica3].map((clinica) => ({
@@ -20,6 +23,72 @@ export default function Flyer(props) {
         <Container style={{ marginTop: "20px" }} ref={props.bg1Ref}>
             <Banner src={bannersrc} alt="MehrCare banner" />
             <Flyer2 src={flyer2} alt="MehrCare flyer" />
+            <WideDiv>
+                <WhiteDiv>
+                    <img src={mehrCareLogo} alt="MehrCare logo y nombre" />
+                    <TextDiv>
+                        <h4>Con MehrCare es Posible</h4>
+                        <p>
+                            Alemania necesita enfermeros! Sumate a la iniciativa
+                            y experimentá lo que es vivir y trabajar en el
+                            exterior
+                        </p>
+                    </TextDiv>
+                </WhiteDiv>
+                <BG1Wide>
+                    <h2>Volá. Conocé. Trabajá</h2>
+                    <h2>Nosotros Te Ayudamos</h2>
+                    <p>
+                        Te ayudamos en el proceso de visado la inserción laboral
+                        y además de todo eso, nos hacemos cargo de tu
+                        aprendizaje en alemán
+                    </p>
+                    <h2 id="req" ref={props.bg1WideRef}>
+                        ¿Cuáles son los requisitos?
+                    </h2>
+                </BG1Wide>
+                <Bg2Wide>
+                    <DivItem>
+                        <div>
+                            <h2>Certificado nivel B2</h2>
+                            <p>
+                                No es necesario saber alemán con
+                                anterioridad.Cuando inicies la beca te
+                                brindaremos un curso para que aprendas alemán y
+                                puedas viajar.
+                            </p>
+                        </div>
+                        <img src={certificado} alt="B2 aleman exam" />
+                    </DivItem>
+                    <DivItem>
+                        <img
+                            src={contrato}
+                            alt="Contract"
+                            style={{ marginRight: "20px" }}
+                        />
+                        <div>
+                            <h2>Contrato laboral</h2>
+                            <p>
+                                Necesitas un contrato laboral antes que puedas
+                                viajar, la duracion mínima es de 2 años. Tendrás
+                                entrevistas directamente con clínicas alemanas.
+                            </p>
+                        </div>
+                    </DivItem>
+                    <DivItem>
+                        <div>
+                            <h2>Trámites de Visado</h2>
+                            <p>
+                                Tendrás que obtener una visa para trabajar allá
+                                .Nosotros te ayudaremos con los papeles y la
+                                inserción laboral, así podrás obtener la visa
+                                facilmente.
+                            </p>
+                        </div>
+                        <img src={tramite} alt="Tramites" />
+                    </DivItem>
+                </Bg2Wide>
+            </WideDiv>
             <Background1>
                 <Text
                     ref={props.requisitosRef}
@@ -111,7 +180,115 @@ export default function Flyer(props) {
         </Container>
     );
 }
+const BG1Wide = styled.div`
+    background-image: url("${bg1}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    aspect-ratio: 2.4489795918367346938775510204082;
+    display: flex;
+    flex-direction: column;
+    padding: 7vw 5vw 4vw 5vw;
+    h2 {
+        align-self: center;
+        margin: 0;
+        color: white;
+        font-size: 3vw;
+    }
+    p {
+        align-self: center;
+        text-align: center;
+        margin: 0;
+        color: white;
+        max-width: 40ch;
+        font-size: 1.7vw;
+        margin-top: 3vw;
+        margin-bottom: auto;
+    }
+    #req {
+        align-self: flex-start;
+    }
+`;
+const TextDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: flex-end;
+    p {
+        max-width: 35ch;
+        text-align: right;
+        margin: 0;
+        color: #0c9382;
+        font-size: 1.7vw;
+        margin-bottom: 8px;
+    }
+    h4 {
+        max-width: 12ch;
+        text-align: right;
+        margin: 0;
+        color: #0a9381;
+        font-size: 1.8vw;
+    }
+`;
 
+const DivItem = styled.div`
+    display: flex;
+    flex-direction: row;
+    margin: 5vw;
+    justify-content: space-around;
+    img {
+        width: 25vw;
+    }
+    div {
+        display: flex;
+        flex-direction: column;
+        h2 {
+            margin: 0;
+            margin-bottom: 2vw;
+            color: white;
+            font-size: 2.2vw;
+        }
+        p {
+            margin: 0;
+            max-width: 25ch;
+            color: white;
+            font-size: 1.7vw;
+        }
+    }
+`;
+const Bg2Wide = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background-image: url("${bg2}");
+    background-size: cover;
+    background-repeat: no-repeat;
+`;
+
+const WhiteDiv = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 5vw;
+    padding-right: 6vw;
+    align-items: flex-end;
+    width: 100vw;
+    margin-bottom: 3vh;
+    img {
+        width: 15vw;
+        max-width: 400px;
+        aspect-ratio: 1;
+        min-width: 200px;
+    }
+`;
+const WideDiv = styled.div`
+    display: none;
+    @media (min-width: 600px) {
+        display: flex;
+        flex-direction: column;
+    }
+`;
 const List = styled.ul`
     color: white;
     padding-left: 7%;
@@ -166,16 +343,25 @@ const Text = styled.h2`
 const Background1 = styled.div`
     width: 100%;
     background-image: url(${background1});
-    aspect-ratio: 4.1;
+    aspect-ratio: 4.07;
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
+    @media (min-width: 600px) {
+        display: none;
+    }
 `;
 const Banner = styled.img`
     width: 100%;
+    @media (min-width: 600px) {
+        display: none;
+    }
 `;
 const Flyer2 = styled.img`
     width: 100%;
+    @media (min-width: 600px) {
+        display: none;
+    }
 `;
 const Container = styled.div`
     width: 100%;
@@ -194,6 +380,9 @@ const Background2 = styled.div`
     padding-left: 5%;
     padding-right: 5%;
     padding-top: 3%;
+    @media (min-width: 600px) {
+        display: none;
+    }
 `;
 const Background3 = styled.div`
     width: 100%;

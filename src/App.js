@@ -16,21 +16,31 @@ const Global = createGlobalStyle`
         margin: 0;
         padding: 0;
         min-height: 100vh;
-        min-width: 100vw;
         scroll-behavior: smooth;
-        
+        overflow-x:hidden;
+        overflow-y: auto;
+        overflow-y: overlay;
     }
 `;
 function App() {
     const requisitosRef = useRef();
     const contactRef = useRef();
     const bg1Ref = useRef();
+    const bg1WideRef = useRef();
     return (
         <>
             <Global />
-            <Navbar requisitosRef={requisitosRef} contactRef={contactRef} />
+            <Navbar
+                requisitosRef={requisitosRef}
+                contactRef={contactRef}
+                bg1WideRef={bg1WideRef}
+            />
             <Hero bg1Ref={bg1Ref} />
-            <Flyer requisitosRef={requisitosRef} bg1Ref={bg1Ref} />
+            <Flyer
+                requisitosRef={requisitosRef}
+                bg1Ref={bg1Ref}
+                bg1WideRef={bg1WideRef}
+            />
             <Section2 contactRef={contactRef} />
             <Footer />
         </>

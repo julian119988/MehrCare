@@ -41,6 +41,49 @@ function Navbar(props) {
                 alt="hambuger menu icon"
                 onClick={() => setIsOpen(!isOpen)}
             />
+            <NavBarList>
+                <NavBarListItem
+                    onClick={() => {
+                        window.scrollTo(0, 0);
+                    }}
+                >
+                    Home
+                </NavBarListItem>
+                <NavBarListItem
+                    onClick={() => {
+                        const offset = 200;
+                        const bodyRect =
+                            document.body.getBoundingClientRect().top;
+                        const elementRect =
+                            props.bg1WideRef.current.getBoundingClientRect()
+                                .top;
+                        const elementPosition = elementRect - bodyRect;
+                        const offsetPosition = elementPosition - offset;
+                        window.scrollTo({
+                            top: offsetPosition,
+                        });
+                    }}
+                >
+                    Requisitos
+                </NavBarListItem>
+                <NavBarListItem
+                    onClick={() => {
+                        const offset = 130;
+                        const bodyRect =
+                            document.body.getBoundingClientRect().top;
+                        const elementRect =
+                            props.contactRef.current.getBoundingClientRect()
+                                .top;
+                        const elementPosition = elementRect - bodyRect;
+                        const offsetPosition = elementPosition - offset;
+                        window.scrollTo({
+                            top: offsetPosition,
+                        });
+                    }}
+                >
+                    Contacto
+                </NavBarListItem>
+            </NavBarList>
             <Nav
                 initial={false}
                 variants={menuVariants}
@@ -58,7 +101,7 @@ function Navbar(props) {
                 <Link
                     variants={linkVariants}
                     onClick={() => {
-                        const offset = 30;
+                        const offset = 130;
                         const bodyRect =
                             document.body.getBoundingClientRect().top;
                         const elementRect =
@@ -102,6 +145,32 @@ function Navbar(props) {
     );
 }
 
+const NavBarList = styled.ul`
+    display: none;
+    margin: 0;
+    padding: 0;
+    @media (min-width: 600px) {
+        display: flex;
+        flex-direction: row;
+        margin-top: 6px;
+        margin-left: auto;
+        margin-right: 10px;
+    }
+`;
+const NavBarListItem = styled.li`
+    display: none;
+    margin: 0;
+    padding: 0;
+    @media (min-width: 600px) {
+        display: flex;
+        margin-left: 2vw;
+        margin-right: 2vw;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+`;
 const Link = styled(motion.li)`
     color: white;
     margin-bottom: 1.6rem;
@@ -182,6 +251,9 @@ const HamburgerMenu = styled.img`
     }
     &:hover {
         opacity: 0.3;
+    }
+    @media (min-width: 600px) {
+        display: none;
     }
 `;
 export default Navbar;

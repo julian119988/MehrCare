@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import heroImg from "../../images/heroImg.png";
 import arrowsrc from "../../images/arrow.png";
+import hero2Img from "../../images/hero2Img.jpg";
 
 export default function Hero(props) {
     return (
@@ -34,9 +35,12 @@ const Container = styled.div`
     background-image: url(${heroImg});
     background-repeat: no-repeat;
     background-size: cover;
-    height: 70vh;
+    height: 80vh;
     margin-top: 120px;
     position: relative;
+    @media (orientation: landscape) {
+        background-image: url(${hero2Img});
+    }
 `;
 const HeroTitle = styled.div`
     width: 245px;
